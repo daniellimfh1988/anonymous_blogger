@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @post.title %></h1>
+    <form action='/<%=@post.id%>/edit' method='post'>
+    <p>
+      <b>Title:<br><br>
+        <input type="text" name="post[title]" placeholder="Edit the title"></b>
+      <br/>
+      <br/>
+      <b>Description:</b><br><br>
+       <textarea cols="50" rows="5" name="post[body]" placeholder="Please edit the description "></textarea>
+      <br/><br/>
+      <input id="post_tags" name="post[tags]" value="tag1, tag2, some other tag, a fourth tag">
+      <input type="submit" value="Update">
+    </p>
+  </form>
+<div>

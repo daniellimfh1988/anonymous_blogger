@@ -1,0 +1,21 @@
+<div class ="container">
+<h2>Below are your historical posts via Blogger!!</h2>
+
+<% if logged_in? && @posts %>
+   <% @posts.each do |x| %> <!-- hey estelle, computer cannot process the code we changed, tried to debug but to no avail
+  -->
+       <ul><li><%= x.title %></li>
+        <a href="/<%= x.id %>/edit">Edit</a>
+      </a></ul>
+   <% end %>
+<% end %>
+
+  <a href = "/new_post">New Post</a>
+  <a href = "/sign_out">Sign Out</a>
+
+
+</div>
+
+
+<!-- hey estelle, computer cannot process the code we changed, tried to debug but to no avail
+  -->

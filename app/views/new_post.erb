@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Create a post to Magic Codedivision Bootcamp!</h1>
+    <p>
+      <form action='/new_post' method='post'>
+      <b>Title:<br><br>
+        <input type="text" name="title" placeholder="Type in your post title"></b>
+      <br/>
+      <br/>
+      <b>Description:</b><br><br>
+       <textarea cols="50" rows="5" name="body" placeholder="Type in your post description"></textarea>
+      <br/>
+      <br/>
+      <label for="post_tags">Tags:</label>
+      <input id="post_tags" name="post[tags]" value="tag1, tag2, some other tag, a fourth tag">
+    <p>
+      <input type="submit" value="Submit!">
+    </p>
+  </form>
+</div>
