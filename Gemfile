@@ -4,14 +4,14 @@ source 'https://rubygems.org'
 gem 'pg'
 
 # Sinatra driver
-gem 'sinatra'
+gem 'sinatra', '1.4.5'
 gem 'sinatra-contrib'
 
 # Use Thin for our web server
 gem 'thin'
 
-gem 'activesupport'
-gem 'activerecord'
+gem 'activesupport', '4.2.0'
+gem 'activerecord', '4.2.0'
 
 gem 'rake'
 gem 'byebug'

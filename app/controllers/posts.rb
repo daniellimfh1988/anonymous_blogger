@@ -1,16 +1,9 @@
 require 'byebug'
 
-class Post < ActiveRecord::Base
-  def self.authenticate(email, password) #3
-    @user = User.find_by_email(email)
-    return false if @user.nil?
-    if @user.password == password
-      return @user
-    else
-      return false
-    end
-  end
+class User < ActiveRecord::Base
+
 end
+
 
 #Note : below no longer in use as estelle recommended an alternative
 helpers do

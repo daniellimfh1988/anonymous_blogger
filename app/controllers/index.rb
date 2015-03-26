@@ -7,11 +7,10 @@ end
 
 #sign in
 post '/sign_in' do
-  @blogger = Post.authenticate(params[:email], params[:password])
-byebug
+  @blogger = User.authenticate(params[:email], params[:password])
+  byebug
   if @blogger
     session[:user_id] = @blogger.id
-    byebug
     redirect to '/posts_list'
   else
     session[:error] = "Invalid username or password."
@@ -21,9 +20,7 @@ end
 
 get '/posts_list' do
   @user = User.find(session[:user_id])
-  byebug
   @posts = @user.posts.all
-  byebug
   # computer cannot process the @posts = @user.posts.all, tried debugging
   erb :posts_list
   # end
@@ -62,9 +59,16 @@ end
 
 post '/:id/edit' do
   @post = Post.find(params[:id])
-  byebug
   @post.update_attributes(params[:post])
-  # @tag = Tag.create(name: params[:post])
+  @tag = Tag.create(name: params[:tag])
   redirect to("/posts_list")
 end
 
+get '/delete/:id' do
+  @post = Post.find(params[:id]).destroy
+  @post.destroy
+  byebug
+  @post.tags.destroy
+  byebug
+  redirect to("/posts_list")
+end
